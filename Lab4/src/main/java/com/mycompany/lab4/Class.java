@@ -3,7 +3,7 @@
 package com.mycompany.lab4;
 
 
-public class Class extends user  {
+public class Class extends User  {
    private String ClassName;
    private String trainerId;
    private int duration;

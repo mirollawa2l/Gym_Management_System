@@ -3,7 +3,7 @@ package com.mycompany.lab4;
 
 import java.time.LocalDate;
 
-public class MemberClassRegistration extends user {
+public class MemberClassRegistration extends User {
    
    private String ClassID ;
    private String status;

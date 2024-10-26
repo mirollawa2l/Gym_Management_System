@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public abstract class DataOperationsImpl implements DataOperations {
 
     protected String filename;
-    protected List<Object> records = new ArrayList<>();  
+    protected List<User> records = new ArrayList<>();  
     
     
     @Override
@@ -31,11 +31,11 @@ public abstract class DataOperationsImpl implements DataOperations {
             Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-      String line;
+          String line;
         try {
             while ((line = reader.readLine()) != null) {
-                Object obj=createRecordFrom(line);
-               insertRecord(obj);
+                Object User=createRecordFrom(line);
+               insertRecord((User) User);
             }
         } catch (IOException ex) {
             Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -49,29 +49,34 @@ public abstract class DataOperationsImpl implements DataOperations {
          
 
     @Override
-    public abstract Object createRecordFrom(String line);
+    public abstract User createRecordFrom(String line);
 
     @Override
-    public  abstract Object returnAllRecords();
+    public  abstract User returnAllRecords();
     
      @Override
      public boolean contains(String key)
      {
-         System.out.println("");
+         for(User rec: records)
+         {
+             if(rec.Id == null ? key == null : rec.Id.equals(key))
+                 return (true);
+         }
          return (false);
      }
 
     @Override
-    public Object getRecord(String line) {
+    public User getRecord(String line) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insertRecord(Object record) {
-          if(!contains(record.))
+    public void insertRecord(User record) {
+          if(!contains(record.Id))
        {
            records.add(record);
        } else {
+              System.out.println("Account already exists");
         }
     }
 
