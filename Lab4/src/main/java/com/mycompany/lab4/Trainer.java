@@ -1,15 +1,15 @@
 
 package com.mycompany.lab4;
 
-public class Trainer extends User {
+public class Trainer extends user {
     private String speciality;
-    private PersonalInfo p;
+    private Personalinfo p;
    
 
     public Trainer(String speciality, String Id, String name, String email, String phoneNumber) {
         super(Id);
         this.speciality = speciality;
-        this.p=new PersonalInfo(name,email,phoneNumber);
+        this.p=new Personalinfo(name,email,phoneNumber);
     }
     
     @Override
