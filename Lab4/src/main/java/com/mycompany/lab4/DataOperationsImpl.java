@@ -24,7 +24,6 @@ public abstract class DataOperationsImpl implements DataOperations {
     
     @Override
     public void readFromFile() {
-//     BufferedReader reader = new BufferedReader(new FileReader(filename));
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader(filename));
@@ -36,7 +35,7 @@ public abstract class DataOperationsImpl implements DataOperations {
         try {
             while ((line = reader.readLine()) != null) {
                 Object obj=createRecordFrom(line);
-                records.add(obj);
+               insertRecord(obj);
             }
         } catch (IOException ex) {
             Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,14 +52,14 @@ public abstract class DataOperationsImpl implements DataOperations {
     public abstract Object createRecordFrom(String line);
 
     @Override
-    public Object returnAllRecords() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Object contains(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public  abstract Object returnAllRecords();
+    
+     @Override
+     public boolean contains(String key)
+     {
+         System.out.println("");
+         return (false);
+     }
 
     @Override
     public Object getRecord(String line) {
@@ -69,12 +68,16 @@ public abstract class DataOperationsImpl implements DataOperations {
 
     @Override
     public void insertRecord(Object record) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+          if(!contains(record.))
+       {
+           records.add(record);
+       } else {
+        }
     }
 
     @Override
-    public void deleteRecord() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void deleteRecord(String Key) {
+     
     }
 
     @Override

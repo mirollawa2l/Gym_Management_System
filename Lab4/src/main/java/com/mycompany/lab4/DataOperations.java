@@ -17,13 +17,13 @@ public interface DataOperations<T> {
 
     T returnAllRecords();
 
-    T contains(String key);
+    boolean contains(String key); //fix in the uml
 
     T getRecord(String line);
 
     void insertRecord(T record);
 
-    void deleteRecord();
+    void deleteRecord(String key);
 
     void saveToFile();
 
