@@ -9,19 +9,19 @@ package com.mycompany.lab4;
  * @author mirol
  * @param <T>
  */
-public interface DataOperations {
+public interface DataOperations<T> {
 
     void readFromFile();  //fix in the uml
 
-    User createRecordFrom(String line);
+    T createRecordFrom(String line);
 
-    User returnAllRecords();
+    T returnAllRecords();
 
     boolean contains(String key); //fix in the uml
 
-    User getRecord(String line);
+    T getRecord(String line);
 
-    void insertRecord(User record);
+    void insertRecord(T record);
 
     void deleteRecord(String key);
 
