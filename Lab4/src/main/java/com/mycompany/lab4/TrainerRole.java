@@ -55,7 +55,7 @@ public class TrainerRole {
              long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), RegistrationDatabase.getRecord(memberID).getRegistrationDate());
               if (daysBetween <= 3){
                  RegistrationDatabase.getRecord(memberID).setStatus("canceled");
-                 RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegisterationDatabase.getRecord(memberID).getAvailableSeats()-1);
+                 RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegistrationDatabase.getRecord(memberID).getAvailableSeats()-1);
                  return true;}
              else  return false;     
         

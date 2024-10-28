@@ -26,7 +26,7 @@ public class MemberClassRegistration extends User {
         return ClassID;
     }
 
-    public LocalDate getRegisterationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
