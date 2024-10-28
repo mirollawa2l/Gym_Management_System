@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class TrainerRole {
     private MemberDatabase memberDatabase;
     private ClassDatabase ClassDatabase;
-    private RegisterationDatabase RegisterationDatabase ;
+    private MemberClassRegisterationDatabase RegisterationDatabase ;
     
     
     

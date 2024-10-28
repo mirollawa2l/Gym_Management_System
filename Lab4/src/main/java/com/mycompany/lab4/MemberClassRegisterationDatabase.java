@@ -32,13 +32,31 @@ public class MemberClassRegisterationDatabase extends Database{
 
     @Override
     public User getRecord(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+        for(MemberClassRegisteration m: records)
+        {
+            if (m.Id.equals(key)) {
+                return m;
+            }
+        }
+        return null;
     }
 
     @Override
     public void deleteRecord(String Key) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        boolean found=false;
+        MemberClassRegisteration toRemove = null;
+  for(MemberClassRegisteration m: records)
+        {
+            if (m.Id.equals(Key)) {
+                toRemove=m;
+                found=true;
+                
+            }
+        }
+         records.remove(toRemove);
+        if(!found)
+            System.out.println("Account doesn't exist");    }
     
     
 }
