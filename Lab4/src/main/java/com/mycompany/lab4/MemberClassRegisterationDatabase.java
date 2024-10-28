@@ -21,7 +21,7 @@ public class MemberClassRegisterationDatabase extends Database{
            String memberId=data[0];
            String classId=data[1];
            String status=data[2];
-           LocalDate registerationDate=data[3];
+          LocalDate registerationDate=LocalDate.parse(data[3]);
            return new MemberClassRegisteration(memberId,classId,status,registerationDate);
     }
 
