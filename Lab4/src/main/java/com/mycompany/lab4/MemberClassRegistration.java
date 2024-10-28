@@ -29,6 +29,11 @@ public class MemberClassRegistration extends User {
     public LocalDate getRegisterationDate() {
         return registrationDate;
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
    
     @Override
     public String lineRepresesntation() {
