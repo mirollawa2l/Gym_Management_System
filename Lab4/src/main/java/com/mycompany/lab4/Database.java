@@ -84,7 +84,18 @@ public abstract class Database implements DataOperations {
 
     @Override
     public void saveToFile() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+       try (FileWriter writer = new FileWriter(filename, false)) {  
+             for(User record:records)
+             {
+                String line=record.lineRepresesntation();
+                 writer.write(line+"\n");
+             }
+            System.out.println("File written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
     }
     
 }
