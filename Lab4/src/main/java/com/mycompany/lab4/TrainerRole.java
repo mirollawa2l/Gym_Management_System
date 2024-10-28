@@ -2,6 +2,7 @@
 package com.mycompany.lab4;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class TrainerRole {
@@ -51,7 +52,8 @@ public class TrainerRole {
     
     public boolean cancelRegistrations(String memberID,String classID){
          if(!RegistrationDatabase.contains(memberID)){
-             if (RegistrationDatabase.getRecord(memberID).getRegisterationDate()-LocalDate.now()<=3){
+             long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), RegistrationDatabase.getRecord(memberID).getRegistrationDate());
+              if (daysBetween <= 3){
                  RegistrationDatabase.getRecord(memberID).setStatus("canceled");
                  RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegisterationDatabase.getRecord(memberID).getAvailableSeats()-1);
                  return true;}
@@ -67,4 +69,3 @@ public class TrainerRole {
         
     }
 
-}
