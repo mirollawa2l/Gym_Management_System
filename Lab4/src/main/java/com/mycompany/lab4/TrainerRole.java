@@ -27,23 +27,40 @@ public class TrainerRole {
             ClassDatabase.records.add(Class);}
          else System.out.println( "class already exists");
     }
-     
+      public ArrayList<Class> getListOfClasses(){
+        return ClassDatabase.returnAllRecords();}
+    
+    
+    public boolean registerMemberForClass(String memberID, String classID, LocalDate registrationDate){
+       if(RegisterationDatabase.getRecord(classID).availableSeats){
+           MemberClassRegistration memberClassRegistration=new MemberClassRegistration( memberID,classID,"active",registrationDate);
+           RegisterationDatabase.getRecord(classID).availableSeats--;
+       return true;}
+       return false;
+           
+    }
+           
     public ArrayList<MemberClassRegisteration> getListOfRegistrations(){
         return RegisterationDatabase.returnAllRecords();}
         
-    public void logout(){
+    
+    public boolean cancelRegistrations(String memberID,String classID){
+         if(!memberClassRegistrationDatabase.contains(memberID)){
+             if (RegisterationDatabase.getRecord(classID).registerationDate-LocalDate.now()<=3){
+                 RegisterationDatabase.getRecord(classID).status="canceled";
+                 RegisterationDatabase.getRecord(classID).availableSeats++;
+                 return true;}
+             else  return false;     
+        
+         }
+         return false;
+                          
+    }
+    
+       public void logout(){
        memberDatabase.saveToFile();
        ClassDatabase.saveToFile();
        RegisterationDatabase.saveToFile();
-    }
-    
-    public void registerMemberForClass(String memberID, String classID, LocalDate registrationDate){
-       if(RegisterationDatabase.getRecord(classID).availableSeats){
-           
-        
-    
-    }
-        
+    }    
     }
 
-}
