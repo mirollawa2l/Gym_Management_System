@@ -1,6 +1,6 @@
 
 package com.mycompany.lab4;
-
+import java.util.ArrayList;
 
 public class AdminRole {
     private TrainerDatabase trainerDatabase;

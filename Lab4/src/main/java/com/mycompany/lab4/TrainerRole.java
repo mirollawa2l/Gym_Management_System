@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class TrainerRole {
     private MemberDatabase memberDatabase;
     private ClassDatabase ClassDatabase;
-    private MemberClassRegisterationDatabase RegisterationDatabase ;
+    private MemberClassRegistrationDatabase RegistrationDatabase ;
     
     
     
@@ -27,40 +27,44 @@ public class TrainerRole {
             ClassDatabase.records.add(Class);}
          else System.out.println( "class already exists");
     }
-      public ArrayList<Class> getListOfClasses(){
-        return ClassDatabase.returnAllRecords();}
-    
+     
+    public ArrayList<MemberClassRegistration> getListOfRegistrations(){
+        return RegistrationDatabase.returnAllRecords();}
+        
+    public void logout(){
+       memberDatabase.saveToFile();
+       ClassDatabase.saveToFile();
+       RegistrationDatabase.saveToFile();
+    }
     
     public boolean registerMemberForClass(String memberID, String classID, LocalDate registrationDate){
-       if(RegisterationDatabase.getRecord(classID).availableSeats){
+       if(RegistrationDatabase.getRecord(memberID).getAvailableSeats()){
            MemberClassRegistration memberClassRegistration=new MemberClassRegistration( memberID,classID,"active",registrationDate);
-           RegisterationDatabase.getRecord(classID).availableSeats--;
+           RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegistrationDatabase.getRecord(memberID).getAvailableSeats()-1);
        return true;}
        return false;
            
     }
            
-    public ArrayList<MemberClassRegisteration> getListOfRegistrations(){
-        return RegisterationDatabase.returnAllRecords();}
-        
+    public ArrayList<Class> getListOfClasses(){
+        return ClassDatabase.returnAllRecords();}
     
     public boolean cancelRegistrations(String memberID,String classID){
-         if(!memberClassRegistrationDatabase.contains(memberID)){
-             if (RegisterationDatabase.getRecord(classID).registerationDate-LocalDate.now()<=3){
-                 RegisterationDatabase.getRecord(classID).status="canceled";
-                 RegisterationDatabase.getRecord(classID).availableSeats++;
+         if(!RegistrationDatabase.contains(memberID)){
+             if (RegistrationDatabase.getRecord(memberID).getRegisterationDate()-LocalDate.now()<=3){
+                 RegistrationDatabase.getRecord(memberID).setStatus("canceled");
+                 RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegisterationDatabase.getRecord(memberID).getAvailableSeats()-1);
                  return true;}
              else  return false;     
         
          }
          return false;
-                          
+             
+            
+             
     }
     
-       public void logout(){
-       memberDatabase.saveToFile();
-       ClassDatabase.saveToFile();
-       RegisterationDatabase.saveToFile();
-    }    
+        
     }
 
+}
