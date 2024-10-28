@@ -11,29 +11,29 @@ import java.util.ArrayList;
  *
  * @author mirol
  */
-public class MemberClassRegisterationDatabase extends Database{
+public class MemberClassRegistrationDatabase extends Database{
 
-        ArrayList<MemberClassRegisteration> records = (ArrayList<MemberClassRegisteration>) (ArrayList<?>) super.records;
+        ArrayList<MemberClassRegistration> records = (ArrayList<MemberClassRegistration>) (ArrayList<?>) super.records;
 
     @Override
-    public MemberClassRegisteration createRecordFrom(String line) {
+    public MemberClassRegistration createRecordFrom(String line) {
            String[] data=line.split(",");
            String memberId=data[0];
            String classId=data[1];
            String status=data[2];
           LocalDate registerationDate=LocalDate.parse(data[3]);
-           return new MemberClassRegisteration(memberId,classId,status,registerationDate);
+           return new MemberClassRegistration(memberId,classId,status,registerationDate);
     }
 
     @Override
-    public ArrayList<MemberClassRegisteration> returnAllRecords() {
+    public ArrayList<MemberClassRegistration> returnAllRecords() {
             return records;
     }
 
     @Override
     public User getRecord(String key) {
 
-        for(MemberClassRegisteration m: records)
+        for(MemberClassRegistration m: records)
         {
             if (m.Id.equals(key)) {
                 return m;
@@ -45,8 +45,8 @@ public class MemberClassRegisterationDatabase extends Database{
     @Override
     public void deleteRecord(String Key) {
         boolean found=false;
-        MemberClassRegisteration toRemove = null;
-  for(MemberClassRegisteration m: records)
+        MemberClassRegistration toRemove = null;
+  for(MemberClassRegistration m: records)
         {
             if (m.Id.equals(Key)) {
                 toRemove=m;

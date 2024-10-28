@@ -3,18 +3,18 @@ package com.mycompany.lab4;
 
 import java.time.LocalDate;
 
-public class MemberClassRegisteration extends User {
+public class MemberClassRegistration extends User {
    
    private String ClassID ;
    private String status;
-   private LocalDate registerationDate;
+   private LocalDate registrationDate;
 
 
-    public MemberClassRegisteration(String memberID, String ClassID, String status, LocalDate registrationDate) {
+    public MemberClassRegistration(String memberID, String ClassID, String status, LocalDate registrationDate) {
         super(memberID);
         this.ClassID = ClassID;
         this.status = status;
-        this.registerationDate = registerationDate;
+        this.registrationDate = registrationDate;
     }
 
    
@@ -27,13 +27,13 @@ public class MemberClassRegisteration extends User {
     }
 
     public LocalDate getRegisterationDate() {
-        return registerationDate;
+        return registrationDate;
     }
    
     @Override
     public String lineRepresesntation() {
  
-        return  Id + "," + ClassID + "," + registerationDate + "," + status ;
+        return  Id + "," + ClassID + "," + registrationDate + "," + status ;
     }
    @Override
    public String getSearchKey(){
