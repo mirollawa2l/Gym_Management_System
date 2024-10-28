@@ -28,17 +28,18 @@ public class TrainerRole {
          else System.out.println( "class already exists");
     }
      
-     public ArrayList<Member> getListOfMembers(){
-        return memberDatabase.returnAllRecords();}
+    public ArrayList<MemberClassRegisteration> getListOfRegistrations(){
+        return RegisterationDatabase.returnAllRecords();}
         
     public void logout(){
-    memberDatabase.saveToFile();
-    ClassDatabase.saveToFile();
-    RegistrationDatabase.saveToFile();
+       memberDatabase.saveToFile();
+       ClassDatabase.saveToFile();
+       RegisterationDatabase.saveToFile();
     }
     
     public void registerMemberForClass(String memberID, String classID, LocalDate registrationDate){
-    if(RegisterationDatabase.getRecord().availableSeats){
+       if(RegisterationDatabase.getRecord(classID).availableSeats){
+           
         
     
     }
