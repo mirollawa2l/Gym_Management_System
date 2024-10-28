@@ -3,7 +3,7 @@
 package com.mycompany.lab4;
 
 
-public class Class extends user  {
+public class Class extends User  {
    private String ClassName;
    private String trainerId;
    private int duration;
@@ -11,7 +11,7 @@ public class Class extends user  {
 
     public Class(String name ,String Id, String trainerId, int duration, int availableSeats) {
         super(Id);
-        this.ClassName=ClassName;
+        this.ClassName=name;
         this.trainerId=trainerId;
         this.duration = duration;
         this.availableSeats = availableSeats;

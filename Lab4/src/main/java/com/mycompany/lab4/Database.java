@@ -16,10 +16,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public abstract class DataOperationsImpl implements DataOperations {
+public abstract class Database implements DataOperations {
 
     protected String filename;
-    protected List<Object> records = new ArrayList<>();  
+    protected ArrayList<User> records = new ArrayList<>();  
     
     
     @Override
@@ -28,57 +28,59 @@ public abstract class DataOperationsImpl implements DataOperations {
         try {
             reader = new BufferedReader(new FileReader(filename));
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
 
       String line;
         try {
             while ((line = reader.readLine()) != null) {
-                Object obj=createRecordFrom(line);
-               insertRecord(obj);
+                User user=createRecordFrom(line);
+               insertRecord(user);
             }
         } catch (IOException ex) {
-            Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             reader.close();
         } catch (IOException ex) {
-            Logger.getLogger(DataOperationsImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
          
 
     @Override
-    public abstract Object createRecordFrom(String line);
+    public abstract User createRecordFrom(String line);
 
     @Override
-    public  abstract Object returnAllRecords();
+    public  abstract ArrayList returnAllRecords();
     
      @Override
      public boolean contains(String key)
      {
-         System.out.println("");
-         return (false);
+        for(User user:records)
+        {
+             if(user.Id.equals(key))
+                return true;
+        }
+            return false;
+        
      }
 
     @Override
-    public Object getRecord(String line) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public  abstract User getRecord(String key) ;
 
     @Override
-    public void insertRecord(Object record) {
-          if(!contains(record.))
+    public void insertRecord(User record) {
+          if(!contains(record.Id))
        {
            records.add(record);
        } else {
+              System.out.println("Account Already exists");
         }
     }
 
     @Override
-    public void deleteRecord(String Key) {
-     
-    }
+    public abstract void deleteRecord(String Key);
 
     @Override
     public void saveToFile() {

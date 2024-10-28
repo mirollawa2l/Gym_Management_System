@@ -2,18 +2,18 @@
 package com.mycompany.lab4;
 
 
-public class Member extends user {
+public class Member extends User {
 
    private String membershipType;
    private  String status;
-   private Personalinfo p;
+   private PersonalInfo p;
 
     public Member(String membershipType, String Status, String Id, String name, String email, String phoneNumber) {
         super(Id);
         
         this.membershipType = membershipType;
         this.status = Status;
-         p=new Personalinfo(name,email,phoneNumber);
+         p=new PersonalInfo(name,email,phoneNumber);
     }
    
     @Override

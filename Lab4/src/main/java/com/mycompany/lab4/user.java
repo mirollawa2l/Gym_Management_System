@@ -2,9 +2,12 @@
 package com.mycompany.lab4;
 
 
-public abstract class user {
+public abstract class User {
     protected String Id;
-    public user(String Id) {
+    
+    
+    
+    public User(String Id) {
         this.Id = Id;
          
     }

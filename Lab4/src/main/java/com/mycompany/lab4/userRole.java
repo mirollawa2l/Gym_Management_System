@@ -8,6 +8,6 @@ package com.mycompany.lab4;
  *
  * @author sherrygirguis
  */
-public class userRole {
+public class UserRole {
     
 }
