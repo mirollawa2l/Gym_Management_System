@@ -9,8 +9,8 @@ public class MemberClassRegistration extends User {
    private String status;
    private LocalDate registrationDate;
 
-    public MemberClassRegistration(String memberID, String ClassID, String status, LocalDate registrationDate, String Id, String name) {
-        super(Id);
+    public MemberClassRegistration(String memberID, String ClassID, String status, LocalDate registrationDate) {
+        super(memberID);
         this.ClassID = ClassID;
         this.status = status;
         this.registrationDate = registrationDate;
