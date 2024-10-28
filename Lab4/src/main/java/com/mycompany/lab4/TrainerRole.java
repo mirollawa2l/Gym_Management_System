@@ -1,6 +1,9 @@
 
 package com.mycompany.lab4;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class TrainerRole {
     private MemberDatabase memberDatabase;
     private ClassDatabase ClassDatabase;
