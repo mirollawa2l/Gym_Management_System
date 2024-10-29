@@ -39,10 +39,12 @@ public class TrainerRole {
     }
     
     public boolean registerMemberForClass(String memberID, String classID, LocalDate registrationDate){
-       if(RegistrationDatabase.getRecord(memberID).getAvailableSeats()){
+        boolean flag= ClassDatabase.getRecord(classID).getAvailableSeats()>0;
+       if(flag){
            MemberClassRegistration memberClassRegistration=new MemberClassRegistration( memberID,classID,"active",registrationDate);
-           RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegistrationDatabase.getRecord(memberID).getAvailableSeats()-1);
-       return true;}
+           ClassDatabase.getRecord(classID).setAvailableSeats(ClassDatabase.getRecord(classID).getAvailableSeats()-1);
+       return true;
+       }
        return false;
            
     }
@@ -55,7 +57,7 @@ public class TrainerRole {
              long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), RegistrationDatabase.getRecord(memberID).getRegistrationDate());
               if (daysBetween <= 3){
                  RegistrationDatabase.getRecord(memberID).setStatus("canceled");
-                 RegistrationDatabase.getRecord(memberID).setAvailableSeats(RegistrationDatabase.getRecord(memberID).getAvailableSeats()-1);
+                 ClassDatabase.getRecord(classID).setAvailableSeats(ClassDatabase.getRecord(classID).getAvailableSeats()-1);
                  return true;}
              else  return false;     
         

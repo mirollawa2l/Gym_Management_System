@@ -31,7 +31,7 @@ public class MemberClassRegistrationDatabase extends Database{
     }
 
     @Override
-    public User getRecord(String key) {
+    public MemberClassRegistration getRecord(String key) {
 
         for(MemberClassRegistration m: records)
         {

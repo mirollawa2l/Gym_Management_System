@@ -25,7 +25,7 @@ public class ClassDatabase extends Database{
     }
 
     @Override
-    public User getRecord(String key) {
+    public Class getRecord(String key) {
         for(Class c: records)
         {
             if (c.Id.equals(key)) {
