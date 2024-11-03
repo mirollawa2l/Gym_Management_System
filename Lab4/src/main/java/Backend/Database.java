@@ -1,5 +1,5 @@
 
-package com.mycompany.lab4;
+package Backend;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

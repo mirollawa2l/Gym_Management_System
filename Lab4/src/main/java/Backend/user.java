@@ -1,5 +1,5 @@
 
-package com.mycompany.lab4;
+package Backend;
 
 
 public abstract class User {

@@ -1,6 +1,6 @@
 
 
-package com.mycompany.lab4;
+package Backend;
 
 
 public class Class extends User  {

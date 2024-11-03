@@ -1,5 +1,5 @@
 
-package com.mycompany.lab4;
+package Backend;
 
 public class Trainer extends User {
     private String speciality;
