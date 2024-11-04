@@ -2,6 +2,8 @@
 package FrontEnd;
 
 import javax.swing.JOptionPane;
+import Backend.AdminRole;
+import Backend.TrainerDatabase;
 
 public class AddTrainerWindow extends javax.swing.JPanel {
 
@@ -153,7 +155,7 @@ public class AddTrainerWindow extends javax.swing.JPanel {
     }//GEN-LAST:event_inputEmailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      do{
+    
        String ID=inputID.getText();
        String name=inputName.getText();
        String email=inputEmail.getText();
@@ -161,12 +163,12 @@ public class AddTrainerWindow extends javax.swing.JPanel {
        String speciality=inputSpeciality.getText();
        if (ID.equals(null)||name.equals(null)||email.equals(null)||phoneNumber.equals(null)||speciality.equals(null))
            JOptionPane.showMessageDialog(this,"Some fields are Empty");
-       else if(Backend.TrainerDatabase.contains(ID))
+       else if(TrainerDatabase.contains(ID))
            JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" already exists!");
        else{   
-        Backend.AdminRole.addTrainer(ID,name,email,speciality,phoneNumber); 
+        AdminRole.addTrainer(ID,name,email,speciality,phoneNumber); 
         JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
-       break;}while(true);
+       
       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -184,4 +186,4 @@ public class AddTrainerWindow extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
-??}
+}

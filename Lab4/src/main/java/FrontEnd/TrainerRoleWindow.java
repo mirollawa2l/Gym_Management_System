@@ -109,11 +109,13 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassActionPerformed
-    
+    AddMemberWindow addWindow = new AddMemberWindow();
+    addWindow.setVisible(true);
     }//GEN-LAST:event_addClassActionPerformed
 
     private void addMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberActionPerformed
-        // TODO add your handling code here:
+        RemoveMemberWindow removeWindow = new RemoveMemberWindow();
+        removeWindow.setVisible(true);
     }//GEN-LAST:event_addMemberActionPerformed
 
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed

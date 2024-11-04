@@ -82,13 +82,13 @@ public class AdminRoleWindow extends javax.swing.JFrame{
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
          AddTrainerWindow addWindow = new AddTrainerWindow();
-            addWindow.setVisible(true);
+         addWindow.setVisible(true);
         
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
      RemoveTrainerWindow removeWindow = new RemoveTrainerWindow();
-            removeWindow.setVisible(true);
+     removeWindow.setVisible(true);
        
     }//GEN-LAST:event_removeTrainerActionPerformed
 
@@ -99,8 +99,7 @@ public class AdminRoleWindow extends javax.swing.JFrame{
     }//GEN-LAST:event_viewTrainerActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-             Logout logoutWindow = new Logout();
-            logoutWindow.setVisible(true);
+            AdminRole.logout();
        
     }//GEN-LAST:event_logoutActionPerformed
 
