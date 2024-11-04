@@ -27,15 +27,13 @@
               <EmptySpace pref="168" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="logout" pref="223" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="viewRegistration" max="32767" attributes="0"/>
-                      <Component id="cancelRegistration" max="32767" attributes="0"/>
-                      <Component id="addMember" alignment="1" pref="223" max="32767" attributes="0"/>
-                      <Component id="addClass" alignment="1" pref="223" max="32767" attributes="0"/>
-                      <Component id="viewMember" alignment="1" pref="223" max="32767" attributes="0"/>
-                      <Component id="viewClass" alignment="0" pref="223" max="32767" attributes="0"/>
-                      <Component id="registration" alignment="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="viewRegistration" max="32767" attributes="0"/>
+                  <Component id="cancelRegistration" max="32767" attributes="0"/>
+                  <Component id="addMember" alignment="1" pref="223" max="32767" attributes="0"/>
+                  <Component id="addClass" alignment="1" pref="223" max="32767" attributes="0"/>
+                  <Component id="viewMember" alignment="1" pref="223" max="32767" attributes="0"/>
+                  <Component id="viewClass" alignment="0" pref="223" max="32767" attributes="0"/>
+                  <Component id="registration" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
           </Group>
