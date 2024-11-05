@@ -22,12 +22,14 @@ public class ViewTrainerWindow extends javax.swing.JPanel {
         Object[][]data =new Object[trainers.size()][columnsNames.length]; 
         for (int i=0;i<trainers.size();i++){
              Trainer trainer=trainers.get(i);
-             data[i]=trainer.lineRepresesntation().split(",");}
-//        DefaultTableModel model =new DefaultTableModel(data,columnsNames);
-//        JTable table =new JTable(model);
-        setData(data);
-        this.setVisible(false);
-       
+             data[i]=trainer.lineRepresesntation().split(",");
+        
+        }
+
+
+          setData(data);
+          this.setVisible(false);
+
     }
     public void setData(Object [][] data)
     {

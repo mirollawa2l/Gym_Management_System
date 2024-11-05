@@ -146,8 +146,8 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_addMemberActionPerformed
 //
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed
-//        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
-//        viewClassWindow.setVisible(true);
+        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
+        viewClassWindow.setVisible(true);
     }//GEN-LAST:event_viewClassActionPerformed
 
     private void viewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMemberActionPerformed
