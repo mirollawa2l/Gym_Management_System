@@ -6,8 +6,8 @@ import Backend.AdminRole;
 import Backend.TrainerDatabase;
 
 public class AddTrainerWindow extends javax.swing.JPanel {
-    private AdminRole admin;
-    private TrainerDatabase trainerDatabase;
+    public static AdminRole admin;
+    public static TrainerDatabase trainerDatabase;
 
    
     public AddTrainerWindow(AdminRole admin,TrainerDatabase database) {
