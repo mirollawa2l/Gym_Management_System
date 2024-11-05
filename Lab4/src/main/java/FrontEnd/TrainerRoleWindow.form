@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -23,19 +16,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="168" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="logout" pref="223" max="32767" attributes="0"/>
-                  <Component id="viewRegistration" max="32767" attributes="0"/>
-                  <Component id="cancelRegistration" max="32767" attributes="0"/>
-                  <Component id="addMember" alignment="1" pref="223" max="32767" attributes="0"/>
-                  <Component id="addClass" alignment="1" pref="223" max="32767" attributes="0"/>
-                  <Component id="viewMember" alignment="1" pref="223" max="32767" attributes="0"/>
-                  <Component id="viewClass" alignment="0" pref="223" max="32767" attributes="0"/>
-                  <Component id="registration" alignment="0" max="32767" attributes="0"/>
+                  <Component id="logout" alignment="1" max="32767" attributes="0"/>
+                  <Component id="viewRegistration" alignment="1" max="32767" attributes="0"/>
+                  <Component id="cancelRegistration" alignment="1" max="32767" attributes="0"/>
+                  <Component id="addMember" alignment="1" max="32767" attributes="0"/>
+                  <Component id="addClass" alignment="1" max="32767" attributes="0"/>
+                  <Component id="viewMember" alignment="1" max="32767" attributes="0"/>
+                  <Component id="viewClass" alignment="0" max="32767" attributes="0"/>
+                  <Component id="registration" alignment="0" min="-2" pref="223" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,6 +57,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JButton" name="logout">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Logout"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JButton" name="addMember">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Member"/>
@@ -118,14 +119,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewRegistrationActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="logout">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Logout"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
