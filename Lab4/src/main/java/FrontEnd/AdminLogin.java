@@ -1,17 +1,29 @@
 
 package FrontEnd;
 
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 
 public class AdminLogin extends javax.swing.JPanel {
+    private JPanel AdminLoginPanel;
+    
   
     
 
     public AdminLogin() {
         initComponents();
+        AdminLoginPanel= new AdminLogin();
+        setLayout(new CardLayout());
+         add(AdminLoginPanel, "TrainerRole");
+         
     }
-
+    private void switchPanel(String panelName) {
+        CardLayout cl = (CardLayout) this.getLayout();
+        cl.show(this, panelName);
+    }
+   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -103,11 +115,11 @@ public class AdminLogin extends javax.swing.JPanel {
     private void CheckCredentials(String password,String username){
         
         if(password.equals(Constants.LoginCredentials.ADMIN_PASSWORD) && username.equals(Constants.LoginCredentials.ADMIN_USERNAME)){
-            AdminRoleWindow adminWindow = new AdminRoleWindow();
-            adminWindow.setVisible(true);}
+            //AdminRoleWindow adminWindow = new AdminRoleWindow();
+           // adminWindow.setVisible(true);}
+           switchPanel("AdminLogin");}
         else JOptionPane.showMessageDialog(this,"Wrong Username or Password!");    
         
-    
     }
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
