@@ -1,13 +1,18 @@
 
 package FrontEnd;
 
+import Backend.AdminRole;
 import javax.swing.JOptionPane;
 import Backend.TrainerDatabase;
 
 public class RemoveTrainerWindow extends javax.swing.JPanel {
+     private AdminRole admin;
+    private TrainerDatabase database;
 
-    public RemoveTrainerWindow() {
+    public RemoveTrainerWindow(AdminRole admin,TrainerDatabase database) {
         initComponents();
+        this.admin=admin;
+        this.database=database;
     }
     
 
@@ -65,9 +70,9 @@ public class RemoveTrainerWindow extends javax.swing.JPanel {
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
       String ID=inputId.getText();
-      if(!TrainerDatabase.contains(ID))
+      if(!database.contains(ID))
           JOptionPane.showMessageDialog(this,"The Trainer with Id="+ID+"doesn't exist");
-      else{removeTrainer(ID);
+      else{admin.removeTrainer(ID);
           JOptionPane.showMessageDialog(this,"The trainer with Id= "+ID+"has been deleted");
       }
       

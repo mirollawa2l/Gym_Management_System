@@ -6,10 +6,14 @@ import Backend.AdminRole;
 import Backend.TrainerDatabase;
 
 public class AddTrainerWindow extends javax.swing.JPanel {
+    private AdminRole admin;
+    private TrainerDatabase database;
 
    
-    public AddTrainerWindow() {
+    public AddTrainerWindow(AdminRole admin,TrainerDatabase database) {
         initComponents();
+        this.admin=admin;
+        this.database=database;
     }
 
     @SuppressWarnings("unchecked")
@@ -161,12 +165,12 @@ public class AddTrainerWindow extends javax.swing.JPanel {
        String email=inputEmail.getText();
        String phoneNumber=inputPhoneNumber.getText();
        String speciality=inputSpeciality.getText();
-       if (ID.equals(null)||name.equals(null)||email.equals(null)||phoneNumber.equals(null)||speciality.equals(null))
+       if (ID.isEmpty()||name.isEmpty()||email.isEmpty()||phoneNumber.isEmpty()||speciality.isEmpty())
            JOptionPane.showMessageDialog(this,"Some fields are Empty");
-       else if(TrainerDatabase.contains(ID))
+       else if(database.contains(ID))
            JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" already exists!");
        else{   
-        AdminRole.addTrainer(ID,name,email,speciality,phoneNumber); 
+        admin.addTrainer(ID,name,email,speciality,phoneNumber); 
         JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
        
       }

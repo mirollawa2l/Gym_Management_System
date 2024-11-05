@@ -1,19 +1,22 @@
 
 package FrontEnd;
 
-import Backend.AdminRole;
+
 import Backend.MemberDatabase;
+import Backend.TrainerRole;
 
 import javax.swing.JOptionPane;
 
 public class AddMemberWindow extends javax.swing.JPanel  {
+    private MemberDatabase database;
+    private TrainerRole trainer;
+   
+    public AddMemberWindow(TrainerRole trainer,MemberDatabase database) {
+         initComponents();
+        this.trainer=trainer;
+        this.database=database;
 
-  
-    public AddMemberWindow() {
-        initComponents();
-        
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -217,12 +220,12 @@ public class AddMemberWindow extends javax.swing.JPanel  {
         String phoneNumber=inputPhoneNumber.getText();
         String status=inputStatus.getText();
         String membershipType=inputMembershipType.getText();
-        if (ID.equals(null)||name.equals(null)||email.equals(null)||phoneNumber.equals(null)||membershipType.equals(null)||status.equals(null))
+        if (ID.isEmpty()||name.isEmpty()||email.isEmpty()||phoneNumber.isEmpty()||membershipType.isEmpty()||status.isEmpty())
         JOptionPane.showMessageDialog(this,"Some fields are Empty");
-        else if(MemberDatabase.contains(ID))
+        else if(database.contains(ID))
         JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" already exists!");
         else{
-            AdminRole.addMember(ID,name,email,,phoneNumber);
+            trainer.addMember(ID,name,email,membershipType,status,phoneNumber);
             JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
 
         }

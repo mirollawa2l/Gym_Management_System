@@ -100,16 +100,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Register Class For Registration"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrationActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cancelRegistration">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancel Registration "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelRegistrationActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewRegistration">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Registration "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewRegistrationActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="logout">
       <Properties>

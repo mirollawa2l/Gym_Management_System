@@ -1,12 +1,18 @@
 
 package FrontEnd;
 
+import Backend.AdminRole ;
+import Backend.TrainerDatabase;
+
 public class AdminRoleWindow extends javax.swing.JFrame{
+ private   AdminRole admin;
+ private TrainerDatabase database;
 
    
     public AdminRoleWindow() {
         initComponents();
-        
+         admin=new AdminRole();
+         database= new TrainerDatabase();
 
     }
 
@@ -81,40 +87,31 @@ public class AdminRoleWindow extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
-         AddTrainerWindow addWindow = new AddTrainerWindow();
+         AddTrainerWindow addWindow = new AddTrainerWindow(admin,database);
          addWindow.setVisible(true);
         
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
-     RemoveTrainerWindow removeWindow = new RemoveTrainerWindow();
+     RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,database);
      removeWindow.setVisible(true);
        
     }//GEN-LAST:event_removeTrainerActionPerformed
 
     private void viewTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTrainerActionPerformed
-            ViewTrainerWindow viewWindow = new ViewTrainerWindow();
+            ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,database);
             viewWindow.setVisible(true);
         
     }//GEN-LAST:event_viewTrainerActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-            AdminRole.logout();
+            admin.logout();
        
     }//GEN-LAST:event_logoutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-
-
-        /* Create and display the form */
+  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 

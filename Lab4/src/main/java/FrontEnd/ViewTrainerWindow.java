@@ -1,11 +1,17 @@
 
 package FrontEnd;
 
-public class ViewTrainerWindow extends javax.swing.JPanel {
-     
+import Backend.AdminRole;
+import Backend.TrainerDatabase;
 
-    public ViewTrainerWindow() {
+public class ViewTrainerWindow extends javax.swing.JPanel {
+          private AdminRole admin;
+    private TrainerDatabase database;
+
+    public ViewTrainerWindow(AdminRole admin,TrainerDatabase database) {
         initComponents();
+        this.admin=admin;
+        this.database=database;
     }
 
     @SuppressWarnings("unchecked")
