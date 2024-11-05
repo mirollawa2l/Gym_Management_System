@@ -1,40 +1,43 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package FrontEnd;
 
-
+import Backend.ClassDatabase;
 import Backend.TrainerRole;
-import Backend.Member;
-import Backend.MemberDatabase;
 import java.util.ArrayList;
-import javax.swing.JTable;
+import Backend.Class;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author mirol
  */
-public class ViewMemberWindow extends javax.swing.JFrame {
+public class ViewClassWindow extends javax.swing.JPanel {
     private TrainerRole trainer;
-    private MemberDatabase database;
+    private ClassDatabase database;
     private final String [] columnsNames = null;
-    
-     public ViewMemberWindow(TrainerRole trainer,MemberDatabase database) {
+
+    /**
+     * Creates new form ViewClassesWindoww
+     */
+    public ViewClassWindow(TrainerRole trainer,ClassDatabase database) {
         initComponents();
-        this.trainer=trainer;
+         this.trainer=trainer;
         this.database=database;
-        String [] columnsNames={"ID", "Name", "Email","Membership Type","PhoneNumber"};
-        ArrayList<Member> members =trainer.getListOfMembers();
-        Object[][]data =new Object[members.size()][columnsNames.length]; 
-        for (int i=0;i<members.size();i++){
-             Member member=members.get(i);
-             data[i]=member.lineRepresesntation().split(",");
+        String [] columnsNames={"Class Id", "Class Name", "Trainer Id","Duration","Max Participants"};
+        ArrayList<Class> classes=trainer.getListOfClasses();
+        Object[][]data =new Object[classes.size()][columnsNames.length]; 
+        for (int i=0;i<classes.size();i++){
+             Class c=classes.get(i);
+             data[i]=c.lineRepresesntation().split(",");
         }
-            setData(data);      
+            setData(data); 
     }
-    public void setData(Object [][] data)
+    
+    
+     public void setData(Object [][] data)
     {
         jTable1.setModel(new DefaultTableModel(data,columnsNames)
                 {
@@ -45,7 +48,6 @@ public class ViewMemberWindow extends javax.swing.JFrame {
                 }
                 });
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,8 +60,6 @@ public class ViewMemberWindow extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,27 +74,17 @@ public class ViewMemberWindow extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -23,10 +23,9 @@ public class ViewTrainerWindow extends javax.swing.JPanel {
         for (int i=0;i<trainers.size();i++){
              Trainer trainer=trainers.get(i);
              data[i]=trainer.lineRepresesntation().split(",");}
-//        DefaultTableModel model =new DefaultTableModel(data,columnsNames);
-//        JTable table =new JTable(model);
+          setData(data);
 //        
-        this.columnsNames = null;  //????
+        this.columnsNames = null;  
     }
     public void setData(Object [][] data)
     {
