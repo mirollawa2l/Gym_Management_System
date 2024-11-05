@@ -18,7 +18,7 @@ public class AddClassWindow extends javax.swing.JFrame {
     /**
      * Creates new form AddClassWindow
      */
-    public AddClassWindow(ClassDatabase database, TrainerRole trainer) {
+    public AddClassWindow(TrainerRole trainer, ClassDatabase database) {
         initComponents();
         this.trainer=trainer;
         this.database=database;
@@ -206,8 +206,9 @@ public class AddClassWindow extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new AddClassWindow().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
+         
         });
     }
 

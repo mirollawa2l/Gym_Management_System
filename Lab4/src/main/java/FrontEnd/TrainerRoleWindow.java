@@ -144,10 +144,10 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         AddMemberWindow addMemberWindow = new AddMemberWindow(trainer, memberDatabase);
         addMemberWindow.setVisible(true);
     }//GEN-LAST:event_addMemberActionPerformed
-
+//
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed
-        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
-        viewClassWindow.setVisible(true);
+//        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
+//        viewClassWindow.setVisible(true);
     }//GEN-LAST:event_viewClassActionPerformed
 
     private void viewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMemberActionPerformed
@@ -160,18 +160,18 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrationActionPerformed
-        AddRegistrationWindow addRegistrationWindow = new AddRegistrationWindow(trainer, memberClassRegistrationDatabase);
-        addRegistrationWindow.setVisible(true);
+//        AddRegistrationWindow addRegistrationWindow = new AddRegistrationWindow(trainer, memberClassRegistrationDatabase);
+//        addRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_registrationActionPerformed
 
     private void cancelRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelRegistrationActionPerformed
-        CancelRegistrationWindow cancelRegistrationWindow = new CancelRegistrationWindow(trainer, memberClassRegistrationDatabase);
-        cancelRegistrationWindow.setVisible(true);
+//        CancelRegistrationWindow cancelRegistrationWindow = new CancelRegistrationWindow(trainer, memberClassRegistrationDatabase);
+//        cancelRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_cancelRegistrationActionPerformed
 
     private void viewRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRegistrationActionPerformed
-        ViewRegistrationWindow viewRegistrationWindow = new ViewRegistrationWindow(trainer, memberClassRegistrationDatabase);
-        viewRegistrationWindow.setVisible(true);
+//        ViewRegistrationWindow viewRegistrationWindow = new ViewRegistrationWindow(trainer, memberClassRegistrationDatabase);
+//        viewRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_viewRegistrationActionPerformed
 
     public static void main(String args[]) {
