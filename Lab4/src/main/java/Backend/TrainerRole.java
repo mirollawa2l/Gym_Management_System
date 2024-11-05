@@ -53,11 +53,14 @@ public class TrainerRole {
         return ClassDatabase.returnAllRecords();}
     
     public boolean cancelRegistrations(String memberID,String classID){
-         if(!RegistrationDatabase.contains(memberID)){
+         if(RegistrationDatabase.contains(memberID)&&ClassDatabase.contains(classID)&&memberDatabase.contains(memberID)){
              long daysBetween = ChronoUnit.DAYS.between(LocalDate.now(), RegistrationDatabase.getRecord(memberID).getRegistrationDate());
               if (daysBetween <= 3){
-                 ClassDatabase.getRecord(classID).setAvailableSeats(ClassDatabase.getRecord(classID).getAvailableSeats()-1);
-                 return true;}
+                ClassDatabase.getRecord(classID).setAvailableSeats(ClassDatabase.getRecord(classID).getAvailableSeats()-1);
+                Class c=ClassDatabase.getRecord(classID);
+                ClassDatabase.returnAllRecords().remove(c);
+                return true;
+              }
              else  return false;     
         
          }
