@@ -6,14 +6,12 @@ import java.time.LocalDate;
 public class MemberClassRegistration extends User {
    
    private String ClassID ;
-   private String status;
    private LocalDate registrationDate;
 
 
-    public MemberClassRegistration(String memberID, String ClassID, String status, LocalDate registrationDate) {
+    public MemberClassRegistration(String memberID, String ClassID, LocalDate registrationDate) {
         super(memberID);
         this.ClassID = ClassID;
-        this.status = status;
         this.registrationDate = registrationDate;
     }
 
@@ -30,15 +28,11 @@ public class MemberClassRegistration extends User {
         return registrationDate;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
    
     @Override
     public String lineRepresesntation() {
  
-        return  Id + "," + ClassID + "," + registrationDate + "," + status ;
+        return  Id + "," + ClassID + "," + registrationDate ;
     }
    @Override
    public String getSearchKey(){

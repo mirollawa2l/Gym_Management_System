@@ -9,7 +9,6 @@ public class Member extends User {
 
     public Member(String membershipType, String Status, String Id, String name, String email, String phoneNumber) {
         super(Id);
-        
         this.membershipType = membershipType;
          p=new PersonalInfo(name,email,phoneNumber);
     }

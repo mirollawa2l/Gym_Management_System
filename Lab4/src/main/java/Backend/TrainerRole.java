@@ -6,9 +6,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class TrainerRole {
-    private MemberDatabase memberDatabase;
-    private ClassDatabase ClassDatabase;
-    private MemberClassRegistrationDatabase RegistrationDatabase ;
+    private MemberDatabase memberDatabase=new MemberDatabase();
+    private ClassDatabase ClassDatabase=new ClassDatabase();
+    private MemberClassRegistrationDatabase RegistrationDatabase=new MemberClassRegistrationDatabase() ;
     
     
     

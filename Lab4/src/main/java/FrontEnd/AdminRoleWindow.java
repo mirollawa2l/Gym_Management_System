@@ -6,7 +6,7 @@ import Backend.TrainerDatabase;
 
 public class AdminRoleWindow extends javax.swing.JFrame{
  private   AdminRole admin;
- private TrainerDatabase database;
+ public TrainerDatabase database;
 
    
     public AdminRoleWindow() {
