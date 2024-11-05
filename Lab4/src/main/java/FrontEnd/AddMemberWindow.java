@@ -223,10 +223,10 @@ public class AddMemberWindow extends javax.swing.JPanel  {
         if (ID.isEmpty()||name.isEmpty()||email.isEmpty()||phoneNumber.isEmpty()||membershipType.isEmpty()||status.isEmpty())
         JOptionPane.showMessageDialog(this,"Some fields are Empty");
         else if(database.contains(ID))
-        JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" already exists!");
+        JOptionPane.showMessageDialog(this,"The member with id="+ID+" already exists!");
         else{
             trainer.addMember(ID,name,email,membershipType,status,phoneNumber);
-            JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
+            JOptionPane.showMessageDialog(this,"The member with id="+ID+" has sucessfully added");
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
