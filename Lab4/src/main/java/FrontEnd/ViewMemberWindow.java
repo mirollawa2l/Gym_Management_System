@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class ViewMemberWindow extends javax.swing.JFrame {
        private TrainerRole trainer;
     private MemberDatabase database;
-    private final String [] columnsNames;
+    private final String [] columnsNames = null;
     
      public ViewMemberWindow(TrainerRole trainer,MemberDatabase database) {
         initComponents();
@@ -33,8 +33,7 @@ public class ViewMemberWindow extends javax.swing.JFrame {
              data[i]=member.lineRepresesntation().split(",");}
 //        DefaultTableModel model =new DefaultTableModel(data,columnsNames);
 //        JTable table =new JTable(model);
-//        
-        this.columnsNames = null;  //????
+//       
     }
     public void setData(Object [][] data)
     {

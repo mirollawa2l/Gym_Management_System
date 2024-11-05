@@ -22,7 +22,7 @@ public class MemberClassRegistrationDatabase extends Database{
            String classId=data[1];
            String status=data[2];
           LocalDate registerationDate=LocalDate.parse(data[3]);
-           return new MemberClassRegistration(memberId,classId,status,registerationDate);
+           return new MemberClassRegistration(memberId,classId,registerationDate);
     }
 
     @Override
