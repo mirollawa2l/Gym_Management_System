@@ -15,6 +15,8 @@ public class AdminRoleWindow extends javax.swing.JPanel {
         initComponents();
          admin=new AdminRole();
          trainerDatabase= new TrainerDatabase();
+         
+         
     }
 
  

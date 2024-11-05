@@ -5,6 +5,8 @@ import Backend.ClassDatabase;
 import Backend.MemberClassRegistrationDatabase;
 import Backend.MemberDatabase;
 import Backend.TrainerRole;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 public class TrainerRoleWindow extends javax.swing.JPanel {
     
@@ -12,6 +14,14 @@ public class TrainerRoleWindow extends javax.swing.JPanel {
     public MemberDatabase memberDatabase;
     public ClassDatabase classDatabase;
     public MemberClassRegistrationDatabase memberClassRegistrationDatabase;
+    
+    private JPanel addClassPanel;
+    private JPanel addMemberPanel;
+    private JPanel viewClassPanel;
+    private JPanel viewMemberPanel;
+    private JPanel registrationPanel;
+    private JPanel cancelRegistrationPanel;
+    private JPanel viewRegistrationPanel;
 
   
     public TrainerRoleWindow() {
@@ -21,6 +31,24 @@ public class TrainerRoleWindow extends javax.swing.JPanel {
         memberDatabase = new MemberDatabase();
         classDatabase = new ClassDatabase();
         memberClassRegistrationDatabase = new MemberClassRegistrationDatabase();
+        
+        addClassPanel = new AddClassWindow(trainer, classDatabase);
+        addMemberPanel = new AddMemberWindow(trainer, memberDatabase);
+        viewClassPanel = new ViewClassWindow(trainer, classDatabase);
+        viewMemberPanel = new ViewMemberWindow(trainer, memberDatabase);
+
+       // registrationPanel = new AddRegistrationWindow(trainer, memberClassRegistrationDatabase);
+      //  cancelRegistrationPanel = new CancelRegistrationWindow(trainer, memberClassRegistrationDatabase);
+      //  viewRegistrationPanel = new ViewRegistrationWindow(trainer, memberClassRegistrationDatabase);
+      
+        setLayout(new CardLayout());
+        add(addClassPanel, "AddClass");
+        add(addMemberPanel, "AddMember");
+        add(viewClassPanel, "ViewClass");
+        add(viewMemberPanel, "ViewMember");
+        add(registrationPanel, "RegisterClass");
+        add(cancelRegistrationPanel, "CancelRegistration");
+        add(viewRegistrationPanel, "ViewRegistration");
     }
 
 
@@ -133,29 +161,72 @@ public class TrainerRoleWindow extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+        // Method to switch between panels based on the panel name
+    private void switchPanel(String panelName) {
+        CardLayout cl = (CardLayout) this.getLayout();
+        cl.show(this, panelName);
+    }
+
+    // Event handlers for each button to switch the panel
+    private void addClassActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        switchPanel("AddClass");
+    }
+
+    private void addMemberActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        switchPanel("AddMember");
+    } 
+
+    private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        switchPanel("ViewClass");
+    }
+
+    private void viewMemberActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        switchPanel("ViewMember");
+    } 
+
+    private void registrationActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        switchPanel("RegisterClass");
+    } 
+
+    private void cancelRegistrationActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        switchPanel("CancelRegistration");
+    } 
+
+    private void viewRegistrationActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        switchPanel("ViewRegistration");
+    }
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         trainer.logout();
+
+
+
     }//GEN-LAST:event_logoutActionPerformed
 
+    /*private void switchPanel(String panelName) {
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), panelName);
+    }
+    
     private void addMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberActionPerformed
 
-        AddMemberWindow addMemberWindow = new AddMemberWindow(trainer, memberDatabase);
-        addMemberWindow.setVisible(true);
+        //AddMemberWindow addMemberWindow = new AddMemberWindow(trainer, memberDatabase);
+        //addMemberWindow.setVisible(true);
     }//GEN-LAST:event_addMemberActionPerformed
 
     private void viewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMemberActionPerformed
-        ViewMemberWindow viewMemberWindow = new ViewMemberWindow(trainer, memberDatabase);
-        viewMemberWindow.setVisible(true);
+       // ViewMemberWindow viewMemberWindow = new ViewMemberWindow(trainer, memberDatabase);
+       // viewMemberWindow.setVisible(true);
     }//GEN-LAST:event_viewMemberActionPerformed
 
     private void addClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassActionPerformed
-        AddClassWindow addClassWindow = new AddClassWindow(trainer, classDatabase);
-        addClassWindow.setVisible(true);
+        //AddClassWindow addClassWindow = new AddClassWindow(trainer, classDatabase);
+       // addClassWindow.setVisible(true);
     }//GEN-LAST:event_addClassActionPerformed
 
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed
-        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
-        viewClassWindow.setVisible(true);
+       // ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
+       // viewClassWindow.setVisible(true);
     }//GEN-LAST:event_viewClassActionPerformed
 
     private void registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrationActionPerformed
@@ -173,7 +244,7 @@ public class TrainerRoleWindow extends javax.swing.JPanel {
         //        viewRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_viewRegistrationActionPerformed
 
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addClass;
     private javax.swing.JButton addMember;
