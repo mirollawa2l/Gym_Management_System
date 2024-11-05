@@ -7,10 +7,10 @@ import Backend.TrainerRole;
 
 public class TrainerRoleWindow extends javax.swing.JFrame {
 
-    private TrainerRole trainer;
-    private MemberDatabase memberDatabase;
-    private ClassDatabase classDatabase;
-    private MemberClassRegistrationDatabase memberClassRegistrationDatabase;
+    public TrainerRole trainer;
+    public MemberDatabase memberDatabase;
+    public ClassDatabase classDatabase;
+    public MemberClassRegistrationDatabase memberClassRegistrationDatabase;
 
     public TrainerRoleWindow() {
         initComponents();

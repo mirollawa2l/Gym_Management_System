@@ -229,6 +229,7 @@ public class AddMemberWindow extends javax.swing.JPanel  {
         else{
             trainer.addMember(ID,name,email,membershipType,status,phoneNumber);
             JOptionPane.showMessageDialog(this,"The member with id="+ID+" has sucessfully added");
+            this.setVisible(false);
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed

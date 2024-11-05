@@ -147,6 +147,7 @@ public class AddClassWindow extends javax.swing.JFrame {
             int max=Integer.parseInt(maxParticipants);
             trainer.addClass(classId,className,trainerId,d,max);
             JOptionPane.showMessageDialog(this,"The Class with id="+classId+" has sucessfully added");
+            this.setVisible(false);
 
         }
         

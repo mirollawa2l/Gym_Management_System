@@ -172,7 +172,7 @@ public class AddTrainerWindow extends javax.swing.JPanel {
        else{   
         admin.addTrainer(ID,name,email,speciality,phoneNumber); 
         JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
-       
+         this.setVisible(false);
       }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -33,7 +33,8 @@ public class ViewMemberWindow extends javax.swing.JFrame {
              data[i]=member.lineRepresesntation().split(",");}
 //        DefaultTableModel model =new DefaultTableModel(data,columnsNames);
 //        JTable table =new JTable(model);
-//       
+           setData(data);
+          this.setVisible(false);
     }
     public void setData(Object [][] data)
     {

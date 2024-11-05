@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class ViewTrainerWindow extends javax.swing.JPanel {
     private AdminRole admin;
     private TrainerDatabase database;
-    private final String [] columnsNames;
+    private final String [] columnsNames=null;
 
     public ViewTrainerWindow(AdminRole admin,TrainerDatabase database) {
         initComponents();
@@ -25,8 +25,9 @@ public class ViewTrainerWindow extends javax.swing.JPanel {
              data[i]=trainer.lineRepresesntation().split(",");}
 //        DefaultTableModel model =new DefaultTableModel(data,columnsNames);
 //        JTable table =new JTable(model);
-//        
-        this.columnsNames = null;  //????
+        setData(data);
+        this.setVisible(false);
+       
     }
     public void setData(Object [][] data)
     {

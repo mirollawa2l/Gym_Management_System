@@ -74,6 +74,7 @@ public class RemoveTrainerWindow extends javax.swing.JPanel {
           JOptionPane.showMessageDialog(this,"The Trainer with Id="+ID+"doesn't exist");
       else{admin.removeTrainer(ID);
           JOptionPane.showMessageDialog(this,"The trainer with Id= "+ID+"has been deleted");
+          this.setVisible(false);
       }
       
       

@@ -5,14 +5,14 @@ import Backend.AdminRole ;
 import Backend.TrainerDatabase;
 
 public class AdminRoleWindow extends javax.swing.JFrame{
- private   AdminRole admin;
- public TrainerDatabase database;
+ public  static  AdminRole admin;
+ public static TrainerDatabase trainerDatabase;
 
    
     public AdminRoleWindow() {
         initComponents();
          admin=new AdminRole();
-         database= new TrainerDatabase();
+         trainerDatabase= new TrainerDatabase();
 
     }
 
@@ -87,19 +87,19 @@ public class AdminRoleWindow extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
-         AddTrainerWindow addWindow = new AddTrainerWindow(admin,database);
+         AddTrainerWindow addWindow = new AddTrainerWindow(admin,trainerDatabase);
          addWindow.setVisible(true);
         
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
-     RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,database);
+     RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,trainerDatabase);
      removeWindow.setVisible(true);
        
     }//GEN-LAST:event_removeTrainerActionPerformed
 
     private void viewTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTrainerActionPerformed
-            ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,database);
+            ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,trainerDatabase);
             viewWindow.setVisible(true);
         
     }//GEN-LAST:event_viewTrainerActionPerformed
