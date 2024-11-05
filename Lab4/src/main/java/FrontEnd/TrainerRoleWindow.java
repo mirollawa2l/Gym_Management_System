@@ -1,4 +1,3 @@
-
 package FrontEnd;
 
 import Backend.ClassDatabase;
@@ -7,18 +6,18 @@ import Backend.MemberDatabase;
 import Backend.TrainerRole;
 
 public class TrainerRoleWindow extends javax.swing.JFrame {
-   private TrainerRole trainer;
+
+    private TrainerRole trainer;
     private MemberDatabase memberDatabase;
     private ClassDatabase classDatabase;
     private MemberClassRegistrationDatabase memberClassRegistrationDatabase;
-    
-    
+
     public TrainerRoleWindow() {
         initComponents();
-        trainer=new TrainerRole();
-         memberDatabase= new MemberDatabase();
-         classDatabase=new ClassDatabase();
-         memberClassRegistrationDatabase=new MemberClassRegistrationDatabase ();
+        trainer = new TrainerRole();
+        memberDatabase = new MemberDatabase();
+        classDatabase = new ClassDatabase();
+        memberClassRegistrationDatabase = new MemberClassRegistrationDatabase();
 
     }
 
@@ -136,47 +135,47 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassActionPerformed
-    AddClassWindow addClassWindow = new AddClassWindow(trainer,classDatabase);
-    addClassWindow.setVisible(true);
+        AddClassWindow addClassWindow = new AddClassWindow(trainer, classDatabase);
+        addClassWindow.setVisible(true);
     }//GEN-LAST:event_addClassActionPerformed
 
     private void addMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMemberActionPerformed
-                                       
-    AddMemberWindow addMemberWindow = new AddMemberWindow(trainer,memberDatabase);
-    addMemberWindow.setVisible(true);
+
+        AddMemberWindow addMemberWindow = new AddMemberWindow(trainer, memberDatabase);
+        addMemberWindow.setVisible(true);
     }//GEN-LAST:event_addMemberActionPerformed
 
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed
-          ViewClassWindow viewClassWindow = new ViewClassWindow(trainer,classDatabase);
-          viewClassWindow.setVisible(true);
+        ViewClassWindow viewClassWindow = new ViewClassWindow(trainer, classDatabase);
+        viewClassWindow.setVisible(true);
     }//GEN-LAST:event_viewClassActionPerformed
 
     private void viewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMemberActionPerformed
-            ViewMemberWindow viewMemberWindow = new ViewMemberWindow(trainer,memberDatabase);
-            viewMemberWindow.setVisible(true);
+        ViewMemberWindow viewMemberWindow = new ViewMemberWindow(trainer, memberDatabase);
+        viewMemberWindow.setVisible(true);
     }//GEN-LAST:event_viewMemberActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-            trainer.logout();
+        trainer.logout();
     }//GEN-LAST:event_logoutActionPerformed
 
     private void registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrationActionPerformed
-            AddRegistrationWindow addRegistrationWindow = new AddRegistrationWindow(trainer,memberClassRegistrationDatabase);
-            addRegistrationWindow.setVisible(true);
+        AddRegistrationWindow addRegistrationWindow = new AddRegistrationWindow(trainer, memberClassRegistrationDatabase);
+        addRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_registrationActionPerformed
 
     private void cancelRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelRegistrationActionPerformed
-            CancelRegistrationWindow cancelRegistrationWindow = new CancelRegistrationWindow(trainer,memberClassRegistrationDatabase);
-            cancelRegistrationWindow.setVisible(true);
+        CancelRegistrationWindow cancelRegistrationWindow = new CancelRegistrationWindow(trainer, memberClassRegistrationDatabase);
+        cancelRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_cancelRegistrationActionPerformed
 
     private void viewRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRegistrationActionPerformed
-            ViewRegistrationWindow viewRegistrationWindow = new ViewRegistrationWindow(trainer,memberClassRegistrationDatabase);
-            viewRegistrationWindow.setVisible(true);
+        ViewRegistrationWindow viewRegistrationWindow = new ViewRegistrationWindow(trainer, memberClassRegistrationDatabase);
+        viewRegistrationWindow.setVisible(true);
     }//GEN-LAST:event_viewRegistrationActionPerformed
 
     public static void main(String args[]) {
-      
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TrainerRoleWindow().setVisible(true);

@@ -1,1 +1,0 @@
-M001,John,Monthly,john@gmail.com,0123456789,active
