@@ -7,6 +7,21 @@ public class GymSystem extends javax.swing.JFrame  {
     public GymSystem() {
         initComponents();
     }
+    
+    private void showAdminLogin() {
+    AdminLogin adminLoginPanel = new AdminLogin();
+    this.setContentPane(adminLoginPanel);
+    this.revalidate();
+    this.repaint();
+}
+
+private void showTrainerLogin() {
+    TrainerLogin trainerLoginPanel = new TrainerLogin();
+    this.setContentPane(trainerLoginPanel);
+    this.revalidate();
+    this.repaint();
+}
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -56,14 +71,12 @@ public class GymSystem extends javax.swing.JFrame  {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    TrainerLogin trainerLoginWindow = new TrainerLogin();
-    trainerLoginWindow.setVisible(true);
+  showTrainerLogin();
     
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     AdminLogin adminLoginWindow = new AdminLogin();
-    adminLoginWindow.setVisible(true);
+    showAdminLogin();
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
