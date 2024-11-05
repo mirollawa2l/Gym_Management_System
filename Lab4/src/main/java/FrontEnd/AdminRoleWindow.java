@@ -4,20 +4,42 @@ package FrontEnd;
 
 import Backend.AdminRole ;
 import Backend.TrainerDatabase;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 
 public class AdminRoleWindow extends javax.swing.JPanel {
 
     public  static  AdminRole admin;
- public static TrainerDatabase trainerDatabase;
+    public static TrainerDatabase trainerDatabase;
+    
+    private JPanel addTrainerPanel;
+    private JPanel viewTrainerPanel;
+    private JPanel removeTrainerPanel;
  
+     
+     
     public AdminRoleWindow() {
         initComponents();
          admin=new AdminRole();
          trainerDatabase= new TrainerDatabase();
          
+         addTrainerPanel = new AddTrainerWindow(admin, trainerDatabase);
+         removeTrainerPanel = new RemoveTrainerWindow(admin,trainerDatabase);
+         viewTrainerPanel = new ViewTrainerWindow(admin, trainerDatabase);
+         
+          setLayout(new CardLayout());
+          add(addTrainerPanel, "AddTrainer");
+          add(removeTrainerPanel, "RemoveTrainer");
+          add(viewTrainerPanel, "Trainer");
+         
          
     }
+    private void switchPanel(String panelName) {
+        CardLayout cl = (CardLayout) this.getLayout();
+        cl.show(this, panelName);
+    }
+
 
  
     @SuppressWarnings("unchecked")
@@ -108,20 +130,22 @@ public class AdminRoleWindow extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
-        AddTrainerWindow addWindow = new AddTrainerWindow(admin,trainerDatabase);
-        addWindow.setVisible(true);
-
+       // AddTrainerWindow addWindow = new AddTrainerWindow(admin,trainerDatabase);
+       // addWindow.setVisible(true);
+       switchPanel("AddTrainer");
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
-        RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,trainerDatabase);
-        removeWindow.setVisible(true);
+     //   RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,trainerDatabase);
+       // removeWindow.setVisible(true);
+       switchPanel("RemoveTrainer");
 
     }//GEN-LAST:event_removeTrainerActionPerformed
 
     private void viewTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTrainerActionPerformed
-        ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,trainerDatabase);
-        viewWindow.setVisible(true);
+     //   ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,trainerDatabase);
+     //   viewWindow.setVisible(true);
+     switchPanel("ViewTrainer");
 
     }//GEN-LAST:event_viewTrainerActionPerformed
 

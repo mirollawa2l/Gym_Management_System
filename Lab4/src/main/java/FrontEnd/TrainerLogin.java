@@ -1,12 +1,24 @@
 
 package FrontEnd;
 
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class TrainerLogin extends javax.swing.JPanel {
 
+   private JPanel TrainerRolePanel; 
+    
     public TrainerLogin() {
         initComponents();
+         TrainerRolePanel= new TrainerRoleWindow();
+        setLayout(new CardLayout());
+         add(TrainerRolePanel, "TrainerRole");
+         
+    }
+    private void switchPanel(String panelName) {
+        CardLayout cl = (CardLayout) this.getLayout();
+        cl.show(this, panelName);
     }
 
     @SuppressWarnings("unchecked")
@@ -142,8 +154,9 @@ public class TrainerLogin extends javax.swing.JPanel {
 private void CheckCredentials(String password,String username){
         
         if(password.equals(Constants.LoginCredentials.ADMIN_PASSWORD) && username.equals(Constants.LoginCredentials.ADMIN_USERNAME)){
-            TrainerRoleWindow trainerWindow = new TrainerRoleWindow();
-            trainerWindow.setVisible(true);}
+           // TrainerRoleWindow trainerWindow = new TrainerRoleWindow();
+           // trainerWindow.setVisible(true);}
+          switchPanel("TrainerRole");}
         else JOptionPane.showMessageDialog(this,"Wrong Username or Password ");    
         
     }
