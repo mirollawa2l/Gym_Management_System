@@ -4,7 +4,13 @@
  */
 package Backend;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +20,12 @@ public class MemberDatabase extends Database {
 
     ArrayList<Member> records = (ArrayList<Member>) (ArrayList<?>) super.records;
 
+    MemberDatabase() {
+        this.filename = "Members.txt";
+        readFromFile();
+
+    }
+
     @Override
     public Member createRecordFrom(String line) {
         String[] data = line.split(",");
@@ -22,8 +34,7 @@ public class MemberDatabase extends Database {
         String membershipType = data[2];
         String email = data[3];
         String phoneNumber = data[4];
-        String status = data[5];
-        return new Member(id, name, membershipType, email, phoneNumber, status);
+        return new Member(id, name, membershipType, email, phoneNumber);
 
     }
 
@@ -44,17 +55,18 @@ public class MemberDatabase extends Database {
 
     @Override
     public void deleteRecord(String Key) {
-        Member toRemove=null;
-        boolean found=false;
+        Member toRemove = null;
+        boolean found = false;
         for (Member member : records) {
             if (member.Id.equals(Key)) {
-               toRemove=member;
+                toRemove = member;
                 found = true;
             }
         }
         records.remove(toRemove);
-        if(!found)
+        if (!found) {
             System.out.println("Account doesn't exist");
+        }
     }
 
 }

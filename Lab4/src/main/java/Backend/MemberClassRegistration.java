@@ -1,13 +1,11 @@
-
 package Backend;
 
 import java.time.LocalDate;
 
 public class MemberClassRegistration extends User {
-   
-   private String ClassID ;
-   private LocalDate registrationDate;
 
+    private String ClassID;
+    private LocalDate registrationDate;
 
     public MemberClassRegistration(String memberID, String ClassID, LocalDate registrationDate) {
         super(memberID);
@@ -15,7 +13,6 @@ public class MemberClassRegistration extends User {
         this.registrationDate = registrationDate;
     }
 
-   
     public String getMemberID() {
         return Id;
     }
@@ -31,13 +28,14 @@ public class MemberClassRegistration extends User {
    
     @Override
     public String lineRepresesntation() {
- 
-        return  Id + "," + ClassID + "," + registrationDate ;
+
+        return Id + "," + ClassID + "," + registrationDate;
     }
-   @Override
-   public String getSearchKey(){
-       return Id+ClassID;
-   
-   }
-    
+
+    @Override
+    public String getSearchKey() {
+        return Id + ClassID;
+
+    }
+
 }

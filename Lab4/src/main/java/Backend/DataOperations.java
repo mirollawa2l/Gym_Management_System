@@ -6,7 +6,6 @@ package Backend;
 
 import java.util.ArrayList;
 
-
 public interface DataOperations {
 
     void readFromFile();  //fix in the uml

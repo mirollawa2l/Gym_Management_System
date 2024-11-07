@@ -1,26 +1,30 @@
 
 package FrontEnd;
 
+import java.awt.Dimension;
+
 public class GymSystem extends javax.swing.JFrame  {
 
   
     public GymSystem() {
-        initComponents();
+       initComponents();
+       setTitle("Gym System");
+        
     }
     
-    private void showAdminLogin() {
-    AdminLogin adminLoginPanel = new AdminLogin();
-    this.setContentPane(adminLoginPanel);
-    this.revalidate();
-    this.repaint();
-}
+//    private void showAdminLogin() {
+//    AdminLogin adminLoginPanel = new AdminLogin(this);
+//    this.setContentPane(adminLoginPanel);
+//    this.revalidate();
+//    this.repaint();
+//}
 
-private void showTrainerLogin() {
-    TrainerLogin trainerLoginPanel = new TrainerLogin();
-    this.setContentPane(trainerLoginPanel);
-    this.revalidate();
-    this.repaint();
-}
+//private void showTrainerLogin() {
+//    TrainerLogin trainerLoginPanel = new TrainerLogin();
+//    this.setContentPane(trainerLoginPanel);
+//    this.revalidate();
+//    this.repaint();
+//}
 
 
     @SuppressWarnings("unchecked")
@@ -71,13 +75,19 @@ private void showTrainerLogin() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  showTrainerLogin();
-    
+//  showTrainerLogin();
+
+   
+   TrainerLogin1 trainer = new TrainerLogin1();
+       trainer.setVisible(true);
+        new GymSystem().setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    showAdminLogin();
-       
+//    showAdminLogin();
+ AdminLogin1 admin = new AdminLogin1();
+    admin.setVisible(true);
+       new GymSystem().setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

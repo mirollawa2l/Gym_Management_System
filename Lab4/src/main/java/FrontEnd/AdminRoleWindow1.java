@@ -1,47 +1,25 @@
-
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package FrontEnd;
-
-import Backend.AdminRole ;
+import Backend.AdminRole;
 import Backend.TrainerDatabase;
-import java.awt.CardLayout;
-import javax.swing.JPanel;
 
-
-public class AdminRoleWindow extends javax.swing.JPanel {
-
-    public  static  AdminRole admin;
-    public static TrainerDatabase trainerDatabase;
-    
-    private JPanel addTrainerPanel;
-    private JPanel viewTrainerPanel;
-    private JPanel removeTrainerPanel;
- 
-     
-     
-    public AdminRoleWindow() {
+public class AdminRoleWindow1 extends javax.swing.JFrame {
+    public   AdminRole admin=new AdminRole();
+    /**
+     * Creates new form AdminaRoleWindow1
+     */
+    public AdminRoleWindow1() {
         initComponents();
-         admin=new AdminRole();
-         trainerDatabase= new TrainerDatabase();
-         
-         addTrainerPanel = new AddTrainerWindow(admin, trainerDatabase);
-         removeTrainerPanel = new RemoveTrainerWindow(admin,trainerDatabase);
-         viewTrainerPanel = new ViewTrainerWindow(admin, trainerDatabase);
-         
-          setLayout(new CardLayout());
-          add(addTrainerPanel, "AddTrainer");
-          add(removeTrainerPanel, "RemoveTrainer");
-          add(viewTrainerPanel, "Trainer");
-         
-         
-    }
-    private void switchPanel(String panelName) {
-        CardLayout cl = (CardLayout) this.getLayout();
-        cl.show(this, panelName);
+           setContentPane(jPanel1);
+        setVisible(true);
+        setTitle("Admin Role");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
     }
 
-
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,6 +29,8 @@ public class AdminRoleWindow extends javax.swing.JPanel {
         removeTrainer = new javax.swing.JButton();
         viewTrainer = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         addTrainer.setText("Add Trainer");
         addTrainer.addActionListener(new java.awt.event.ActionListener() {
@@ -107,53 +87,82 @@ public class AdminRoleWindow extends javax.swing.JPanel {
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
-       // AddTrainerWindow addWindow = new AddTrainerWindow(admin,trainerDatabase);
-       // addWindow.setVisible(true);
-       switchPanel("AddTrainer");
+         AddTrainerWindow1 addWindow = new AddTrainerWindow1();
+         addWindow.setVisible(true);
+           this.setVisible(false);
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
-     //   RemoveTrainerWindow removeWindow = new RemoveTrainerWindow(admin,trainerDatabase);
-       // removeWindow.setVisible(true);
-       switchPanel("RemoveTrainer");
-
+           RemoveTrainerWindow1 removeWindow = new RemoveTrainerWindow1();
+         removeWindow.setVisible(true);
+             this.setVisible(false);
     }//GEN-LAST:event_removeTrainerActionPerformed
 
     private void viewTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTrainerActionPerformed
-     //   ViewTrainerWindow viewWindow = new ViewTrainerWindow(admin,trainerDatabase);
-     //   viewWindow.setVisible(true);
-     switchPanel("ViewTrainer");
-
+           ViewTrainerWindow1 viewWindow = new ViewTrainerWindow1();
+           viewWindow.setVisible(true);
+               this.setVisible(false);
     }//GEN-LAST:event_viewTrainerActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         admin.logout();
-
+         this.setVisible(false);
     }//GEN-LAST:event_logoutActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AdminRoleWindow1().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTrainer;
