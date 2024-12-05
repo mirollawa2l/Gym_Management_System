@@ -10,7 +10,7 @@ import Backend.MemberDatabase;
 import Backend.TrainerRole;
 
 
-public class TrainerRoleWindow1 extends javax.swing.JFrame {
+public class TrainerRoleWindow extends javax.swing.JFrame {
     
     public TrainerRole trainer;
     public MemberDatabase memberDatabase;
@@ -20,14 +20,15 @@ public class TrainerRoleWindow1 extends javax.swing.JFrame {
     /**
      * Creates new form TrainerRoleWindow1
      */
-    public TrainerRoleWindow1() {
+    public TrainerRoleWindow() {
         initComponents();
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Trainer Role");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+               this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
-//         trainer = new TrainerRole();
+         trainer = new TrainerRole();
 //        memberDatabase = new MemberDatabase();
 //        classDatabase = new ClassDatabase();
 //        memberClassRegistrationDatabase = new MemberClassRegistrationDatabase();
@@ -177,31 +178,31 @@ public class TrainerRoleWindow1 extends javax.swing.JFrame {
 
     private void viewClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassActionPerformed
          
-         ViewClassWindow1 viewClassWindow = new ViewClassWindow1();
+         ViewClassWindow viewClassWindow = new ViewClassWindow();
          viewClassWindow.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_viewClassActionPerformed
 
     private void AddClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddClassActionPerformed
-         AddClassWindow1 c = new AddClassWindow1();
+         AddClassWindow c = new AddClassWindow();
          c.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_AddClassActionPerformed
 
     private void registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrationActionPerformed
-           RegisterMemberForClassWindow1 addRegistrationWindow = new RegisterMemberForClassWindow1();
+           RegisterMemberForClassWindow addRegistrationWindow = new RegisterMemberForClassWindow();
               addRegistrationWindow.setVisible(true);
               this.setVisible(false);
     }//GEN-LAST:event_registrationActionPerformed
 
     private void cancelRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelRegistrationActionPerformed
-                CancelRegistrationWindow1 cancelRegistrationWindow = new CancelRegistrationWindow1();
+                CancelRegistrationWindow cancelRegistrationWindow = new CancelRegistrationWindow();
                 cancelRegistrationWindow.setVisible(true);
                 this.setVisible(false);
     }//GEN-LAST:event_cancelRegistrationActionPerformed
 
     private void viewRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRegistrationActionPerformed
-               ViewRegistrationsWindow1 viewRegistrationWindow = new ViewRegistrationsWindow1();
+               ViewRegistrationsWindow viewRegistrationWindow = new ViewRegistrationsWindow();
                 viewRegistrationWindow.setVisible(true);
                 this.setVisible(false);
     }//GEN-LAST:event_viewRegistrationActionPerformed
@@ -214,14 +215,14 @@ public class TrainerRoleWindow1 extends javax.swing.JFrame {
 
     private void AddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMemberActionPerformed
         // TODO add your handling code here:
-        AddMemberWindow1 a = new AddMemberWindow1();
+        AddMemberWindow a = new AddMemberWindow();
        a.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_AddMemberActionPerformed
 
     private void ViewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMemberActionPerformed
         // TODO add your handling code here:
-         ViewMemberWindow1 a = new ViewMemberWindow1();
+         ViewMemberWindow a = new ViewMemberWindow();
        a.setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_ViewMemberActionPerformed
@@ -243,20 +244,21 @@ public class TrainerRoleWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TrainerRoleWindow1().setVisible(true);
+                new TrainerRoleWindow().setVisible(true);
             }
         });
     }

@@ -6,17 +6,18 @@ package FrontEnd;
 import Backend.AdminRole;
 import Backend.TrainerDatabase;
 
-public class AdminRoleWindow1 extends javax.swing.JFrame {
+public class AdminRoleWindow extends javax.swing.JFrame {
     public   AdminRole admin=new AdminRole();
     /**
      * Creates new form AdminaRoleWindow1
      */
-    public AdminRoleWindow1() {
+    public AdminRoleWindow() {
         initComponents();
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Admin Role");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+              this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
 
@@ -106,19 +107,19 @@ public class AdminRoleWindow1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrainerActionPerformed
-         AddTrainerWindow1 addWindow = new AddTrainerWindow1();
+         AddTrainerWindow addWindow = new AddTrainerWindow();
          addWindow.setVisible(true);
            this.setVisible(false);
     }//GEN-LAST:event_addTrainerActionPerformed
 
     private void removeTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTrainerActionPerformed
-           RemoveTrainerWindow1 removeWindow = new RemoveTrainerWindow1();
+           RemoveTrainerWindow removeWindow = new RemoveTrainerWindow();
          removeWindow.setVisible(true);
              this.setVisible(false);
     }//GEN-LAST:event_removeTrainerActionPerformed
 
     private void viewTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTrainerActionPerformed
-           ViewTrainerWindow1 viewWindow = new ViewTrainerWindow1();
+           ViewTrainerWindow viewWindow = new ViewTrainerWindow();
            viewWindow.setVisible(true);
                this.setVisible(false);
     }//GEN-LAST:event_viewTrainerActionPerformed
@@ -145,21 +146,23 @@ public class AdminRoleWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminRoleWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminRoleWindow1().setVisible(true);
+                new AdminRoleWindow().setVisible(true);
             }
         });
     }

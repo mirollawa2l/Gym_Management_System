@@ -1,45 +1,43 @@
+
 package FrontEnd;
 
+import Backend.MemberClassRegistration;
+import Backend.MemberClassRegistrationDatabase;
 import Backend.TrainerRole;
-import Backend.Member;
-import Backend.MemberDatabase;
 import java.util.ArrayList;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ViewMemberWindow1 extends javax.swing.JFrame {
-
-    private TrainerRole trainer;
-    private MemberDatabase database;
-    private final String [] columnsNames = null;
+public class ViewRegistrationsWindow extends javax.swing.JFrame {
     
-
-    public ViewMemberWindow1() {
+       private TrainerRole trainer=new TrainerRole();
+    private final String [] columnsNames = null;
+    public ViewRegistrationsWindow() {
         initComponents();
-        this.trainer=trainer;
-        this.database=database;
-   setContentPane(jPanel1);
+       
+           setContentPane(jPanel1);
         setVisible(true);
-        setTitle("View Member");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setTitle("View Registration");
+               this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
-        String [] columnsNames={"ID", "Name", "Email","Membership Type","PhoneNumber"};
-        ArrayList<Member> members =trainer.getListOfMembers();
-        Object[][]data =new Object[members.size()][columnsNames.length]; 
-        for (int i=0;i<members.size();i++){
-             Member member=members.get(i);
-             data[i]=member.lineRepresesntation().split(",");
-
-}
-           setData(data);
-        this.setVisible(false);
-            TrainerRoleWindow1 trainer= new  TrainerRoleWindow1();
+        String [] columnsNames={"Member Id","Class Id","Registration Date"};
+        ArrayList<MemberClassRegistration> registers =trainer.getListOfRegistrations();
+        Object[][]data =new Object[registers.size()][columnsNames.length]; 
+        for (int i=0;i<registers.size();i++){
+             MemberClassRegistration register=registers.get(i);
+             data[i]=register.lineRepresesntation().split(",");
+    }
+        
+         setData(data);
+          this.setVisible(false);
+            TrainerRoleWindow trainer= new  TrainerRoleWindow();
             trainer.setVisible(true);
 
-    
-        
     }
-public void setData(Object [][] data)
+    
+    
+    
+       public void setData(Object [][] data)
     {
         jTable1.setModel(new DefaultTableModel(data,columnsNames)
                 {
@@ -50,10 +48,6 @@ public void setData(Object [][] data)
                 }
                 });
     }
-
-    
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,17 +57,6 @@ public void setData(Object [][] data)
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 7, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 273, Short.MAX_VALUE)
-        );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,14 +71,27 @@ public void setData(Object [][] data)
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 13, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -103,10 +99,8 @@ public void setData(Object [][] data)
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,20 +123,23 @@ public void setData(Object [][] data)
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegistrationsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegistrationsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegistrationsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegistrationsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMemberWindow1().setVisible(true);
+                new ViewRegistrationsWindow().setVisible(true);
             }
         });
     }

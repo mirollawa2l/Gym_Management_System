@@ -8,19 +8,17 @@ import javax.swing.table.DefaultTableModel;
 
 
 
-public class ViewClassWindow1 extends javax.swing.JFrame {
-  private TrainerRole trainer;
-    private ClassDatabase database;
+public class ViewClassWindow extends javax.swing.JFrame {
+  private TrainerRole trainer=new TrainerRole();
     private final String [] columnsNames = null;
     
-    public ViewClassWindow1() {
+    public ViewClassWindow() {
         initComponents();
-             this.trainer=trainer;
-        this.database=database;
            setContentPane( jScrollPane1);
         setVisible(true);
         setTitle("View Class");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         String [] columnsNames={"Class Id", "Class Name", "Trainer Id","Duration","Max Participants"};
         ArrayList<Class> classes=trainer.getListOfClasses();
@@ -31,8 +29,8 @@ public class ViewClassWindow1 extends javax.swing.JFrame {
         }
             setData(data);
           this.setVisible(false);
-            TrainerRoleWindow1 trainer= new  TrainerRoleWindow1();
-            trainer.setVisible(true);
+            TrainerRoleWindow trainer1= new  TrainerRoleWindow();
+            trainer1.setVisible(true);
 
             
     }
@@ -108,20 +106,21 @@ public class ViewClassWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewClassWindow1().setVisible(true);
+                new ViewClassWindow().setVisible(true);
             }
         });
     }

@@ -8,18 +8,17 @@ import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class ViewTrainerWindow1 extends javax.swing.JFrame {
-private AdminRole admin;
-    private TrainerDatabase database;
+public class ViewTrainerWindow extends javax.swing.JFrame {
+private AdminRole admin=new AdminRole();
+    
     private final String [] columnsNames=null;
-    public ViewTrainerWindow1() {
+    public ViewTrainerWindow() {
         initComponents();
-        this.admin=admin;
-        this.database=database;
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("View Trainer");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+             this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         String [] columnsNames={"ID", "Name", "Email","Speciality","PhoneNumber"};
         ArrayList<Trainer> trainers =admin.getListOfTrainers();
@@ -29,7 +28,7 @@ private AdminRole admin;
              data[i]=trainer.lineRepresesntation().split(",");
           setData(data);
         this.setVisible(false);
-            AdminRoleWindow1 admin= new  AdminRoleWindow1();
+            AdminRoleWindow admin= new  AdminRoleWindow();
             admin.setVisible(true);
 
 
@@ -123,21 +122,22 @@ private AdminRole admin;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 
-                new ViewTrainerWindow1().setVisible(true);
+                new ViewTrainerWindow().setVisible(true);
             }
         });
     }

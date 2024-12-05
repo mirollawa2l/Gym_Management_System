@@ -17,16 +17,16 @@ import javax.swing.JOptionPane;
  *
  * @author mirol
  */
-public class RegisterMemberForClassWindow1 extends javax.swing.JFrame {
-    TrainerRole trainer;
+public class RegisterMemberForClassWindow extends javax.swing.JFrame {
+    TrainerRole trainer=new TrainerRole();
     private JDateChooser dateChooser;
 
     /**
      * Creates new form RegisterMemberForClassWindow1
      */
-    public RegisterMemberForClassWindow1() {
+    public RegisterMemberForClassWindow() {
         initComponents();
-        this.trainer=trainer;
+ 
       
         dateChooser = new JDateChooser();
         add(dateChooser);
@@ -34,7 +34,8 @@ public class RegisterMemberForClassWindow1 extends javax.swing.JFrame {
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Register Member for Class");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+               this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         
     }
@@ -156,7 +157,7 @@ public class RegisterMemberForClassWindow1 extends javax.swing.JFrame {
 
     }
             this.setVisible(false);
-             TrainerRoleWindow1 trainer= new  TrainerRoleWindow1();
+             TrainerRoleWindow trainer= new  TrainerRoleWindow();
             trainer.setVisible(true);
 
     }//GEN-LAST:event_ButtonActionPerformed
@@ -178,20 +179,21 @@ public class RegisterMemberForClassWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterMemberForClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegisterMemberForClassWindow1().setVisible(true);
+                new RegisterMemberForClassWindow().setVisible(true);
             }
         });
     }

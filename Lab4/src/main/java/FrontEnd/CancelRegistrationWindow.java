@@ -9,19 +9,20 @@ import javax.swing.JOptionPane;
  *
  * @author mirol
  */
-public class CancelRegistrationWindow1 extends javax.swing.JFrame {
+public class CancelRegistrationWindow extends javax.swing.JFrame {
       private TrainerRole trainer=new TrainerRole();
 
     /**
      * Creates new form CancelRegistrationWindow1
      */
-    public CancelRegistrationWindow1() {
+    public CancelRegistrationWindow() {
         initComponents();
            
    setContentPane(jPanel1);
         setVisible(true);
         setTitle("Cancel Registration");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+               this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
 
@@ -132,7 +133,7 @@ public class CancelRegistrationWindow1 extends javax.swing.JFrame {
         this.setVisible(false);
 //       TrainerRole t=new TrainerRole();
 //       t.cancelRegistrations(memberID, classID);
-         TrainerRoleWindow1 trainer= new  TrainerRoleWindow1();
+         TrainerRoleWindow trainer= new  TrainerRoleWindow();
            trainer.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -153,20 +154,21 @@ public class CancelRegistrationWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CancelRegistrationWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelRegistrationWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CancelRegistrationWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelRegistrationWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CancelRegistrationWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelRegistrationWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CancelRegistrationWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CancelRegistrationWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CancelRegistrationWindow1().setVisible(true);
+                new CancelRegistrationWindow().setVisible(true);
             }
         });
     }

@@ -14,20 +14,21 @@ import javax.swing.JOptionPane;
  *
  * @author mirol
  */
-public class AddMemberWindow1 extends javax.swing.JFrame {
+public class AddMemberWindow extends javax.swing.JFrame {
 
     public TrainerRole trainer=new TrainerRole();
     
     /**
      * Creates new form AddMemberWindow1
      */
-    public AddMemberWindow1() {
+    public AddMemberWindow() {
         initComponents();
-       
+       this.setLocation(300, 200);
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Add Member");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+                this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
 
@@ -229,7 +230,7 @@ public class AddMemberWindow1 extends javax.swing.JFrame {
             trainer.addMember(ID,name,email,membershipType,phoneNumber);
             JOptionPane.showMessageDialog(this,"The member with id="+ID+" has sucessfully added");
             this.setVisible(false);
-            TrainerRoleWindow1 trainer= new  TrainerRoleWindow1();
+            TrainerRoleWindow trainer= new  TrainerRoleWindow();
             trainer.setVisible(true);
 
         }
@@ -252,14 +253,15 @@ public class AddMemberWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMemberWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMemberWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMemberWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddMemberWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMemberWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -267,7 +269,7 @@ public class AddMemberWindow1 extends javax.swing.JFrame {
             public void run() {
          
            
-                new AddMemberWindow1().setVisible(true);
+                new AddMemberWindow().setVisible(true);
             }
         });
     }

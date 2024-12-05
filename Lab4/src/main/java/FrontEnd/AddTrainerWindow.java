@@ -14,20 +14,21 @@ import Backend.TrainerDatabase;
  *
  * @author mirol
  */
-public class AddTrainerWindow1 extends javax.swing.JFrame {
+public class AddTrainerWindow extends javax.swing.JFrame {
 
       public static AdminRole admin=new AdminRole();
     
     /**
      * Creates new form AddTrainerWindow1
      */
-    public AddTrainerWindow1() {
+    public AddTrainerWindow() {
         initComponents();
        
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Add Trainer");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+                this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
     }
 
@@ -201,7 +202,7 @@ public class AddTrainerWindow1 extends javax.swing.JFrame {
             admin.addTrainer(ID,name,email,speciality,phoneNumber);
             JOptionPane.showMessageDialog(this,"The trainer with id="+ID+" has sucessfully added");
             this.setVisible(false);
-            AdminRoleWindow1 admin= new  AdminRoleWindow1();
+            AdminRoleWindow admin= new  AdminRoleWindow();
             admin.setVisible(true);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -231,20 +232,21 @@ public class AddTrainerWindow1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddTrainerWindow1().setVisible(true);
+                new AddTrainerWindow().setVisible(true);
             }
         });
     }

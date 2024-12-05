@@ -4,15 +4,12 @@ import Backend.AdminRole;
 import javax.swing.JOptionPane;
 import Backend.TrainerDatabase;
 
-public class RemoveTrainerWindow1 extends javax.swing.JFrame {
+public class RemoveTrainerWindow extends javax.swing.JFrame {
 
-private AdminRole admin;
-private TrainerDatabase database;
-
-    public RemoveTrainerWindow1() {
+private AdminRole admin=new AdminRole();
+    public RemoveTrainerWindow() {
         initComponents();
-        this.admin=admin;
-        this.database=database;
+      
            setContentPane(jPanel1);
         setVisible(true);
         setTitle("Remove Trainer");
@@ -94,12 +91,12 @@ private TrainerDatabase database;
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         String ID=inputId.getText();
-        if(!database.contains(ID))
+        if(!admin.trainerDatabase.contains(ID))
         JOptionPane.showMessageDialog(this,"The Trainer with Id="+ID+"doesn't exist");
         else{admin.removeTrainer(ID);
             JOptionPane.showMessageDialog(this,"The trainer with Id= "+ID+"has been deleted");
             this.setVisible(false);
-             AdminRoleWindow1 admin= new  AdminRoleWindow1();
+             AdminRoleWindow admin= new  AdminRoleWindow();
             admin.setVisible(true);
         }
 
@@ -122,20 +119,21 @@ private TrainerDatabase database;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RemoveTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RemoveTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RemoveTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RemoveTrainerWindow1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RemoveTrainerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RemoveTrainerWindow1().setVisible(true);
+                new RemoveTrainerWindow().setVisible(true);
             }
         });
     }

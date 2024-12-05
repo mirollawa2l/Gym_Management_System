@@ -9,7 +9,8 @@ public class GymSystem extends javax.swing.JFrame  {
     public GymSystem() {
        initComponents();
        setTitle("Gym System");
-        
+         this.setLocation(300, 200);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
 //    private void showAdminLogin() {
@@ -78,14 +79,14 @@ public class GymSystem extends javax.swing.JFrame  {
 //  showTrainerLogin();
 
    
-   TrainerLogin1 trainer = new TrainerLogin1();
+   TrainerLogin trainer = new TrainerLogin();
        trainer.setVisible(true);
         new GymSystem().setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //    showAdminLogin();
- AdminLogin1 admin = new AdminLogin1();
+ AdminLogin admin = new AdminLogin();
     admin.setVisible(true);
        new GymSystem().setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
